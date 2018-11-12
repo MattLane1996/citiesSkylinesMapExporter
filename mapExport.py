@@ -8,7 +8,7 @@ fileList = os.listdir() #Get all files in the directory
 #User parameters ------------------------------------------------------------------------------------------------------
 mapResolution=4096 #The resolution of the map image. Since the image should always be square, you only need one dimension
 cityName='Santander-' #If there are non timestamped saves of the city, add the dash at the end to include only timestamped maps
-folderName='SantanderMaps3' #This is the folder that all the generated map images will be dumped to
+folderName='SantanderMaps' #This is the folder that all the generated map images will be dumped to
 numberOfTiles=5
 #----------------------------------------------------------------------------------------------------------------------
 
