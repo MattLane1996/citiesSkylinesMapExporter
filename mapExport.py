@@ -9,6 +9,7 @@ fileList = os.listdir() #Get all files in the directory
 mapResolution=4096 #The resolution of the map image. Since the image should always be square, you only need one dimension
 cityName='Santander-' #If there are non timestamped saves of the city, add the dash at the end to include only timestamped maps
 folderName='SantanderMaps3' #This is the folder that all the generated map images will be dumped to
+numberOfTiles=5
 #----------------------------------------------------------------------------------------------------------------------
 
 def writeBatchFile(fileName, dirName, createDir=0): #This function writes the batch file to export the map
@@ -17,7 +18,7 @@ def writeBatchFile(fileName, dirName, createDir=0): #This function writes the ba
     if createDir==1:
         f.write('mkdir '+dirName+'\n') #If specified, create the image dump directory
 
-    f.write('start /W cslmapview.exe -input '+fileName+' -output '+imgName+' -imagewidth '+str(mapResolution)+' -area 5 -silent\n') #Write the batch file command to export the map image from cslmapview.exe
+    f.write('start /W cslmapview.exe -input '+fileName+' -output '+imgName+' -imagewidth '+str(mapResolution)+' -area '+str(numberOfTiles)+' -silent\n') #Write the batch file command to export the map image from cslmapview.exe
     f.write('copy '+imgName+' '+dirName+'\n') #Copy this image into the image dump folder
     f.close()
     return 'mapExporter.bat' #Return the filename of the batch file. This is useful if you want to create the batch file in this function, because you can call the returned name below
