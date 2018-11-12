@@ -1,4 +1,4 @@
-# citiesSkylinesMapExporter
+# Cities Skylines Map Exporter
 Python scripts for making videos of city growth using the cslmapview mod for Cities Skylines.  
 Place mapExport.py in the folder with your \*.cslmap.gz.  
 Place videoMaker.py in the image dump folder that you created.  
